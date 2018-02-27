@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,12 +15,9 @@
     .col  { 
         margin: 10px;
     }
-
-
     .col .row {
         margin: 10px;
     }
-
     #circle {
         width: 100px;
         height: 100px;
@@ -30,27 +26,24 @@
         position: absolute;
         top: -100px;
     }   
-
     div.container.center {
         margin-top: 50px;
     }
-
     div.row.row-center {
         margin-top: 40px;
         margin-bottom: 25px;
     }
     
     div.col-3.col-right {
-        margin-left: 60px
+        margin-left: 90px
     }
-
     div.row.row-top {
         margin-bottom: 50px
     }
     </style>
 
     </head>
-  <body onload="return randomColor()" >
+    <body onload="return randomColor()" >
         <div class="container-fluid" style="height: 150px; background-color: #4cbc7e;">
              
         </div>
@@ -77,18 +70,21 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <script>
-                var color = '#';
-                var click = -10;
-                function randomColor() {  
-                    var letters = ['000000','FF0000','00FF00','0000FF','FFFF00','00FFFF','FF00FF','C0C0C0']; 
-                    color += letters[Math.floor(Math.random() * letters.length)];
-                    document.getElementById('circle').style.background = color; 
-                    return color;
-                }
-                
+            var color = '#';
+            var click = -10;
+            // Make random color everytime refresh browser
+            function randomColor() {  
+                var letters = ['000000','FF0000','00FF00','0000FF','FFFF00','00FFFF','FF00FF','C0C0C0']; 
+                color += letters[Math.floor(Math.random() * letters.length)];
+                document.getElementById('circle').style.background = color; 
+                return color;
+            }
+
+
+            // make darker function whenever circle clicked. 
             var circle = document.getElementById('circle');
-        
             circle.addEventListener('click', function() {
+                // when clicked 9 times. Circle color is black.
                 if (click > -100) {
         
                     console.log("Random color is: " +color);
@@ -113,6 +109,7 @@
                     document.getElementById('circle').style.background = color1;
                     click -= 10;
                 } else {
+                    //show to console is done when we click 9 times
                     return console.log("done");
                 }
                 console.log(click);
