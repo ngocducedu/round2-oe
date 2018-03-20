@@ -1,5 +1,8 @@
 add tezt
+<<<<<<< HEAD
 
 Chang test backup
 
 Chang test 1h55pm
+=======
+>>>>>>> parent of 696a8a2... chang back up
